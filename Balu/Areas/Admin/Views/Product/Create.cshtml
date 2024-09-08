@@ -1,0 +1,81 @@
+﻿@model Product
+
+<div asp-validation-summary="All"></div>
+@* <div asp-validation-summary="ModelOnly"></div>
+<div asp-validation-summary="None"></div> *@
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient m-lg-0 py-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-4">Create Product</h2>
+            </div>
+        </div>
+
+        <div class="card-body py-4">
+            <form method="Post">
+                <div class="border p-3 mt-4">
+                    <div class="row pb-2">
+                        <h2 class="text-primary">Create Product</h2></hr>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="Title" class="p-0">Product Name</label>
+                        <input asp-for="Title" type="text" class="form-control" />
+                        <aspn asp-validation-for="Title" class="text-danger"></aspn>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="Author" class="p-0">Author</label>
+                        <input asp-for="Author" type="text" class="form-control" />
+                        <aspn asp-validation-for="Author" class="text-danger"></aspn>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="Discription" class="p-0">Discription</label>
+                        <textarea asp-for="Discription" type="text" class="form-control"></textarea>
+                        <aspn asp-validation-for="Discription" class="text-danger"></aspn>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="ISBN" class="p-0">ISBN</label>
+                        <input asp-for="ISBN" type="text" class="form-control" />
+                        <aspn asp-validation-for="ISBN" class="text-danger"></aspn>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="Price" class="p-0">Price</label>
+                        <input asp-for="Price" type="text" class="form-control" />
+                        <aspn asp-validation-for="Price" class="text-danger"></aspn>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="Price50" class="p-0">Price50</label>
+                        <input asp-for="Price50" type="text" class="form-control" />
+                        <aspn asp-validation-for="Price50" class="text-danger"></aspn>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="Price100" class="p-0">Price100</label>
+                        <input asp-for="Price100" type="text" class="form-control" />
+                        <aspn asp-validation-for="Price" class="text-danger"></aspn>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="ListPrice" class="p-0">ListPrice</label>
+                        <input asp-for="ListPrice" type="text" class="form-control" />
+                        <aspn asp-validation-for="Price" class="text-danger"></aspn>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="btn btn-primary form-control">Create</button>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a asp-controller="Product" asp-action="Index" class="btn btn-secondary form-control border"> Back To List</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{
+        <partial name="_ValidationScriptsPartial" />
+    }
+}

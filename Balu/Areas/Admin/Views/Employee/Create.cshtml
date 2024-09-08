@@ -1,0 +1,39 @@
+﻿
+@model Employee
+
+<div class="card shadow border-0 mt-4">
+    <div class="card-header bg-secondary bg-gradient m-lg-0 my-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-4">Create Employee</h2>
+            </div>
+        </div>
+        <div class="card-body py-4">
+            <form method="Post">
+                <div class="border p-3 mt-4">
+                    <div class="row pb-2">
+                        <h2 class="text-primary">Create Employee</h2></hr>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="EmployeeId" class="p-0">Employee ID</label>
+                        <input asp-for="EmployeeId" type="text" class="form-control" />
+                        <aspn asp-validation-for="EmployeeId" class="text-danger"></aspn>
+                    </div>
+                    <div class="mb-3 row p-1">
+                        <label asp-for="EmployeeName" class="p-0">Employee Name</label>
+                        <input asp-for="EmployeeName" type="text" class="form-control" />
+                        <aspn asp-validation-for="EmployeeName" class="text-danger"></aspn>
+                    </div>
+                    <div class="row">
+                        <div class="col-6 col-md-3">
+                            <button type="submit" class="btn btn-primary form-control">Create</button>
+                        </div>
+                        <div class="col-6 col-md-3">
+                            <a asp-controller="Employee" asp-action="Index" class="btn btn-secondary form-control border"> Back To List</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
