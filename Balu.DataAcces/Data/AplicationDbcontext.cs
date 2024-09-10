@@ -1,10 +1,14 @@
 ﻿using Balu.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Diagnostics;
 
 namespace Balu.DataAcces.Data
 {
-    public class AplicationDbcontext : DbContext
+    // public class AplicationDbcontext : DbContext
+    public class AplicationDbcontext : IdentityDbContext<IdentityUser>
+
     {
         public AplicationDbcontext(DbContextOptions<AplicationDbcontext> options) : base(options) { }
 
@@ -14,6 +18,7 @@ namespace Balu.DataAcces.Data
         public DbSet<Employee> Employees { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Category>().HasData(
                 new Category
                 {
